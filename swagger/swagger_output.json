@@ -1,0 +1,334 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API SpeedPoint",
+    "description": "Ambiente com todos os endpoints do Speed Point"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:7779/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Autenticação",
+      "description": "Responsável por todo gerenciamento da autenticação no software"
+    },
+    {
+      "name": "Empresas",
+      "description": "Responsável pelo gerenciamento das empresas onde o usuário estará vinculado para registar um ponto"
+    },
+    {
+      "name": "Usuários",
+      "description": "Responsável pelo gerenciamento dos usuários"
+    },
+    {
+      "name": "Pontos",
+      "description": "Responsável pelo gerenciamento dos registros dos honorários dos usuários"
+    },
+    {
+      "name": "Home",
+      "description": "Código 500 a resposta para o universo"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "description": "Rota de teste da API",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": []
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "Usuários"
+        ],
+        "description": "Rota responsável por trazer todos usuários",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "tags": [
+          "Usuários"
+        ],
+        "description": "Rota responsável por trazer um usuário específico pelo ID do mesmo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID da empresa"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Usuários"
+        ],
+        "description": "Rota responsável por desativar um usuário utilizando seu ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID da empresa"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          }
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "tags": [
+          "Usuários"
+        ],
+        "description": "Rota responsável por criar um usuário vinculado a uma empresa",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUser"
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Usuários"
+        ],
+        "description": "Rota responsável por atualizar um usuário utilizando seu ID",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUser"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Login": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "renner@gmail.com"
+          },
+          "password": {
+            "type": "string",
+            "example": "12345678@Re"
+          }
+        }
+      },
+      "CreateCompany": {
+        "type": "object",
+        "properties": {
+          "fantasyName": {
+            "type": "string",
+            "example": "Microsoft"
+          },
+          "corporateName": {
+            "type": "string",
+            "example": "Microsoft"
+          },
+          "cnpj": {
+            "type": "string",
+            "example": "68035847000145"
+          },
+          "areaOfOperation": {
+            "type": "string",
+            "example": "Software"
+          }
+        }
+      },
+      "EditCompany": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "62804e353f356e900d5eadd9"
+          },
+          "fantasyName": {
+            "type": "string",
+            "example": "Microsoft"
+          },
+          "corporateName": {
+            "type": "string",
+            "example": "Microsoft"
+          },
+          "areaOfOperation": {
+            "type": "string",
+            "example": "Software"
+          }
+        }
+      },
+      "CreateUser": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Renner Borges"
+          },
+          "password": {
+            "type": "string",
+            "example": "12345678@Re"
+          },
+          "email": {
+            "type": "string",
+            "example": "rennerferreira23@gmail.com"
+          },
+          "cpf": {
+            "type": "string",
+            "example": "07517373480"
+          },
+          "tel": {
+            "type": "string",
+            "example": "6499295-4946"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "example": "2022-05-24T00:50:51.088Z"
+          },
+          "companyId": {
+            "type": "string",
+            "example": "628105ab5146f608d0567d6b"
+          },
+          "role": {
+            "type": "string",
+            "example": "g"
+          },
+          "workload": {
+            "type": "number",
+            "example": 160
+          }
+        }
+      },
+      "EditUser": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "6281096a860c72ada8bb6715"
+          },
+          "name": {
+            "type": "string",
+            "example": "Renner Borges"
+          },
+          "tel": {
+            "type": "string",
+            "example": "6499295-4946"
+          },
+          "password": {
+            "type": "string",
+            "example": "12345678@Re"
+          },
+          "workload": {
+            "type": "number",
+            "example": 160
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "apiKey",
+        "name": "token",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}
