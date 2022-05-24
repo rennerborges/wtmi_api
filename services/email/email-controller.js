@@ -18,7 +18,7 @@ export default async function sendEmail({ text, subject, to, html }) {
   const mailSent = await transporter.sendMail({
     text,
     subject,
-    from: `Speed Point <${emailConfig.user}>`,
+    from: `WTMI <${emailConfig.user}>`,
     to,
     html,
   });

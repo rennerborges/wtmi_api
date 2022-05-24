@@ -1,6 +1,7 @@
 import express from 'express';
 
 import userRouters from './user-router';
+import emailRouters from './email-router';
 
 const app = express();
 
@@ -12,5 +13,6 @@ app.get('/', (req, res) => {
 });
 
 app.use(userRouters);
+app.use(emailRouters);
 
 export default app;
