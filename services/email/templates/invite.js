@@ -621,7 +621,7 @@ export default function getTemplateInvite({ username }) {
 	&nbsp;</div>
 	A comissão organizadora do 4° WTMI - Workshop de Tecnologias Móveis e para a Internet, tem a honra de convidá-lo para participar do evento como palestrante.<br>
 	<br>
-	Este é um evento tradicional do núcleo da computação que ocontecerá dentro do IF Goiano - Campus Morrinhos, nos dias 21, 22 e 23 de junho de 2022 no bloco do Núcleo de Computação das 13h00 às 22h00.<br>
+	Este é um evento tradicional do núcleo da computação que acontecerá dentro do IF Goiano - Campus Morrinhos, nos dias 21, 22 e 23 de junho de 2022 no bloco do Núcleo de Computação das 13h00 às 22h00.<br>
 	<br>
 	Certos de contarmos com sua valiosa presença encaminharemos o link para sua inscrição.
 																			</td>

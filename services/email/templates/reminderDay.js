@@ -1,6 +1,9 @@
 /* eslint-disable no-tabs */
 
+import { RenderMap, Verify } from '../util/render';
+
 export default function getTemplateReminderUser({ username }) {
+  const palestras = [...new Array(3)];
   return `<!doctype html>
 	<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 			<head>
@@ -620,7 +623,11 @@ export default function getTemplateReminderUser({ username }) {
 							</td>
 					</tr>
 			</tbody>
-	</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width:100%;">
+	</table>
+	${RenderMap(
+    palestras,
+    (palestra, indexPalestra) => `
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width:100%;">
 			<!--[if gte mso 9]>
 		<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
 		<![endif]-->
@@ -658,7 +665,11 @@ export default function getTemplateReminderUser({ username }) {
 							</td>
 					</tr>
 			</tbody>
-	</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
+	</table>
+	${Verify(
+    indexPalestra !== palestras.length - 1,
+    `
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
 			<tbody class="mcnDividerBlockOuter">
 					<tr>
 							<td class="mcnDividerBlockInner" style="min-width:100%; padding:18px;">
@@ -676,45 +687,14 @@ export default function getTemplateReminderUser({ username }) {
 							</td>
 					</tr>
 			</tbody>
-	</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width:100%;">
-			<!--[if gte mso 9]>
-		<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
-		<![endif]-->
-		<tbody class="mcnBoxedTextBlockOuter">
-					<tr>
-							<td valign="top" class="mcnBoxedTextBlockInner">
-									
-					<!--[if gte mso 9]>
-					<td align="center" valign="top" ">
-					<![endif]-->
-									<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnBoxedTextContentContainer">
-											<tbody><tr>
-													
-													<td style="padding-top:9px; padding-left:18px; padding-bottom:9px; padding-right:18px;">
-													
-															<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width:100% !important;">
-																	<tbody><tr>
-																			<td valign="top" class="mcnTextContent" style="padding: 18px;color: #6351AD;font-family: Helvetica;font-size: 18px;font-style: normal;font-weight: normal;line-height: 150%;text-align: left;">
-																					<font face="arial, helvetica neue, helvetica, sans-serif"><strong>14:30 - Imersão a realidade virtual</strong><br>
-	Sala 02</font>
-																			</td>
-																	</tr>
-															</tbody></table>
-													</td>
-											</tr>
-									</tbody></table>
-					<!--[if gte mso 9]>
-					</td>
-					<![endif]-->
-									
-					<!--[if gte mso 9]>
-									</tr>
-									</table>
-					<![endif]-->
-							</td>
-					</tr>
-			</tbody>
-	</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+	</table>
+	`,
+  )}
+	
+	`,
+  )}
+	
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
 			<tbody class="mcnTextBlockOuter">
 					<tr>
 							<td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
