@@ -2,6 +2,7 @@ import express from 'express';
 
 import userRouters from './user-router';
 import emailRouters from './email-router';
+import importDataRouters from './import-data-router';
 
 const app = express();
 
@@ -14,5 +15,6 @@ app.get('/', (req, res) => {
 
 app.use(userRouters);
 app.use(emailRouters);
+app.use(importDataRouters);
 
 export default app;
