@@ -10,3 +10,9 @@ export function MomentSpeed(date) {
 export function FormatDate(format, date) {
   return MomentSpeed(date).format(format);
 }
+
+export function TransformDateUsa(date, hour = '') {
+  const [day, mounth, year] = date.split('/');
+
+  return `${year}-${mounth}-${day} ${hour}`;
+}
