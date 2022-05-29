@@ -2,6 +2,11 @@ import XLSX from 'xlsx';
 
 export function ConverterXLSXToJson(req, res, next) {
   const { file } = req;
+
+  if (!file) {
+    throw new Error('É necessário informar um arquivo');
+  }
+
   const { buffer } = file;
 
   const workbook = XLSX.read(buffer);

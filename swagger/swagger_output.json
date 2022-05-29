@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:7779/"
+      "url": "http://localhost:7780/"
     }
   ],
   "tags": [
@@ -16,20 +16,12 @@
       "description": "Responsável por todo gerenciamento da autenticação no software"
     },
     {
-      "name": "Empresas",
-      "description": "Responsável pelo gerenciamento das empresas onde o usuário estará vinculado para registar um ponto"
+      "name": "Importação",
+      "description": "Responsável pelo gerenciamento das importações de dados do Even3"
     },
     {
       "name": "Usuários",
       "description": "Responsável pelo gerenciamento dos usuários"
-    },
-    {
-      "name": "Pontos",
-      "description": "Responsável pelo gerenciamento dos registros dos honorários dos usuários"
-    },
-    {
-      "name": "Home",
-      "description": "Código 500 a resposta para o universo"
     }
   ],
   "paths": {
@@ -192,6 +184,86 @@
           }
         }
       }
+    },
+    "/invite": {
+      "post": {
+        "tags": [
+          "Autenticação"
+        ],
+        "description": "Rota responsável por autenticar um usuário",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reminder/day": {
+      "post": {
+        "tags": [
+          "Autenticação"
+        ],
+        "description": "Rota responsável por autenticar um usuário",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/import/schedule": {
+      "post": {
+        "tags": [
+          "Importação"
+        ],
+        "description": "Rota responsável por importas as programações do arquivo gerado pelo Even3",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -276,7 +348,7 @@
           },
           "dateOfBirth": {
             "type": "string",
-            "example": "2022-05-24T00:50:51.088Z"
+            "example": "2022-05-29T21:43:43.811Z"
           },
           "companyId": {
             "type": "string",

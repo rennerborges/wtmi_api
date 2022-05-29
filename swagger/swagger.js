@@ -19,8 +19,8 @@ const doc = {
   host: `localhost:${process.env.PORT}`,
   basePath: '/',
   schemes: [],
-  consumes: ['application/json'],
-  produces: ['application/json'],
+  consumes: ['application/json', 'multipart/form-data'],
+  produces: ['application/json', 'multipart/form-data'],
   tags: [
     {
       name: 'Autenticação',
@@ -28,22 +28,13 @@ const doc = {
         'Responsável por todo gerenciamento da autenticação no software',
     },
     {
-      name: 'Empresas',
+      name: 'Importação',
       description:
-        'Responsável pelo gerenciamento das empresas onde o usuário estará vinculado para registar um ponto',
+        'Responsável pelo gerenciamento das importações de dados do Even3',
     },
     {
       name: 'Usuários',
       description: 'Responsável pelo gerenciamento dos usuários',
-    },
-    {
-      name: 'Pontos',
-      description:
-        'Responsável pelo gerenciamento dos registros dos honorários dos usuários',
-    },
-    {
-      name: 'Home',
-      description: 'Código 500 a resposta para o universo',
     },
   ],
   securityDefinitions: {
