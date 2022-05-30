@@ -9,7 +9,7 @@ function SendEmailReminderDay() {
   });
 }
 
-export default cron.schedule('30 19  * * *', SendEmailReminderDay, {
+export default cron.schedule('40 19  * * *', SendEmailReminderDay, {
   scheduled: true,
   timezone: 'America/Sao_Paulo',
 });
