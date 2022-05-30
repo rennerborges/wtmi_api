@@ -12,7 +12,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:7780",
+      "url": "http://localhost:7781",
       "description": "Local"
     },
     {
@@ -159,127 +159,6 @@
           "name": {
             "type": "string",
             "example": "Renner"
-          }
-        }
-      },
-      "Login": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "example": "renner@gmail.com"
-          },
-          "password": {
-            "type": "string",
-            "example": "12345678@Re"
-          }
-        }
-      },
-      "CreateCompany": {
-        "type": "object",
-        "properties": {
-          "fantasyName": {
-            "type": "string",
-            "example": "Microsoft"
-          },
-          "corporateName": {
-            "type": "string",
-            "example": "Microsoft"
-          },
-          "cnpj": {
-            "type": "string",
-            "example": "68035847000145"
-          },
-          "areaOfOperation": {
-            "type": "string",
-            "example": "Software"
-          }
-        }
-      },
-      "EditCompany": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "example": "62804e353f356e900d5eadd9"
-          },
-          "fantasyName": {
-            "type": "string",
-            "example": "Microsoft"
-          },
-          "corporateName": {
-            "type": "string",
-            "example": "Microsoft"
-          },
-          "areaOfOperation": {
-            "type": "string",
-            "example": "Software"
-          }
-        }
-      },
-      "CreateUser": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "example": "Renner Borges"
-          },
-          "password": {
-            "type": "string",
-            "example": "12345678@Re"
-          },
-          "email": {
-            "type": "string",
-            "example": "rennerferreira23@gmail.com"
-          },
-          "cpf": {
-            "type": "string",
-            "example": "07517373480"
-          },
-          "tel": {
-            "type": "string",
-            "example": "6499295-4946"
-          },
-          "dateOfBirth": {
-            "type": "string",
-            "example": "2022-05-30T20:20:52.778Z"
-          },
-          "companyId": {
-            "type": "string",
-            "example": "628105ab5146f608d0567d6b"
-          },
-          "role": {
-            "type": "string",
-            "example": "g"
-          },
-          "workload": {
-            "type": "number",
-            "example": 160
-          }
-        }
-      },
-      "EditUser": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "example": "6281096a860c72ada8bb6715"
-          },
-          "name": {
-            "type": "string",
-            "example": "Renner Borges"
-          },
-          "tel": {
-            "type": "string",
-            "example": "6499295-4946"
-          },
-          "password": {
-            "type": "string",
-            "example": "12345678@Re"
-          },
-          "workload": {
-            "type": "number",
-            "example": 160
           }
         }
       }
