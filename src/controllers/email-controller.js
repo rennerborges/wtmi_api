@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import dotenv from 'dotenv';
 import sendEmail from '../../services/email/email-controller';
 import getTemplateInvite from '../../services/email/templates/invite';
@@ -6,14 +7,13 @@ import getTemplateReminderUser from '../../services/email/templates/reminderDay'
 dotenv.config({ path: './variables.env' });
 
 export const postInvite = async (req, res) => {
-  /* #swagger.description = "Rota responsável por autenticar um usuário" */
-  /* #swagger.security = [] */
-  /* #swagger.tags = ["Autenticação"] */
+  /* #swagger.description = "Rota responsável por enviar e-mail de convite ao palestrante" */
+  /* #swagger.tags = ["Envio de e-mail"] */
   /* #swagger.requestBody = { 
     required: true, 
     content: { 
       "application/json": { 
-        schema: { $ref: "#/components/schemas/Login" }, 
+        schema: { $ref: "#/components/schemas/SendEmailDefault" }, 
       } 
     } 
     } 
@@ -38,14 +38,13 @@ export const postInvite = async (req, res) => {
 };
 
 export const postReminderDay = async (req, res) => {
-  /* #swagger.description = "Rota responsável por autenticar um usuário" */
-  /* #swagger.security = [] */
-  /* #swagger.tags = ["Autenticação"] */
+  /* #swagger.description = "Rota responsável por lebrar os usuários quais eventos ele terá no dia" */
+  /* #swagger.tags = ["Envio de e-mail"] */
   /* #swagger.requestBody = { 
     required: true, 
     content: { 
       "application/json": { 
-        schema: { $ref: "#/components/schemas/Login" }, 
+        schema: { $ref: "#/components/schemas/SendEmailDefault" }, 
       } 
     } 
     } 
