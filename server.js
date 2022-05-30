@@ -20,9 +20,13 @@ mongoose.connection.on('error', (error) => {
 });
 
 const server = express();
+
 server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
+
+server.use('/images', express.static('public/images'));
+
 server.use(
   '/docs',
   swaggerUi.serve,
