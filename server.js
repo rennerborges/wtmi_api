@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 import cors from 'cors';
 import dotenv from 'dotenv';
-
 import mongoose from 'mongoose';
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import swaggerFile from './swagger/swagger_output.json';
 import app from './app';
+import ManagerCron from './services/cron';
 
 dotenv.config({ path: './variables.env' });
 
@@ -34,4 +34,6 @@ server.use('/', app);
 
 server.listen(process.env.PORT, () => {
   console.log(`Servidor rodando na porta: ${process.env.PORT}`);
+
+  ManagerCron.run();
 });
