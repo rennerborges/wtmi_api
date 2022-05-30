@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 import sendEmail from '../../services/email/email-controller';
-import emailConfig from '../../config/email';
 import getTemplateInvite from '../../services/email/templates/invite';
 import getTemplateReminderUser from '../../services/email/templates/reminderDay';
 
@@ -31,7 +30,6 @@ export const postInvite = async (req, res) => {
   sendEmail({
     text: 'WTMI - Venha palestrar com a gente!',
     subject: 'WTMI - Venha palestrar com a gente!',
-    from: `WTMI <${emailConfig.user}>`,
     to: [email],
     html: templateEmail,
   });
@@ -64,7 +62,6 @@ export const postReminderDay = async (req, res) => {
   sendEmail({
     text: 'WTMI - Acompanhe sua agenda de hoje com a gente! 🤩',
     subject: 'WTMI - Acompanhe sua agenda de hoje com a gente! 🤩',
-    from: `WTMI <${emailConfig.user}>`,
     to: [email],
     html: templateEmail,
   });
