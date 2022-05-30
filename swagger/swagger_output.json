@@ -2,8 +2,13 @@
   "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
-    "title": "API SpeedPoint",
-    "description": "Ambiente com todos os endpoints do Speed Point"
+    "title": "API 4° WTMI",
+    "description": "Ambiente com todos os endpoints referentes a API do 4° Workshop de Tecnologias Móveis e para a Internet ",
+    "contact": {
+      "name": "Workshop de Tecnologias Móveis e para a Internet",
+      "email": "wtmi.ifgoiano@gmail.com",
+      "url": "https://www.even3.com.br/wtmi/"
+    }
   },
   "servers": [
     {
@@ -17,8 +22,8 @@
   ],
   "tags": [
     {
-      "name": "Autenticação",
-      "description": "Responsável por todo gerenciamento da autenticação no software"
+      "name": "Envio de e-mail",
+      "description": "Responsável por todo gerenciamento de envio de e-mail no software"
     },
     {
       "name": "Importação",
@@ -45,170 +50,30 @@
         "security": []
       }
     },
-    "/users": {
-      "get": {
-        "tags": [
-          "Usuários"
-        ],
-        "description": "Rota responsável por trazer todos usuários",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Não autorizado"
-          },
-          "403": {
-            "description": "Acesso Negado"
-          }
-        }
-      }
-    },
-    "/user/{id}": {
-      "get": {
-        "tags": [
-          "Usuários"
-        ],
-        "description": "Rota responsável por trazer um usuário específico pelo ID do mesmo",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "ID da empresa"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Não autorizado"
-          },
-          "403": {
-            "description": "Acesso Negado"
-          },
-          "404": {
-            "description": "Não Encontrado"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Usuários"
-        ],
-        "description": "Rota responsável por desativar um usuário utilizando seu ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "ID da empresa"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Não autorizado"
-          },
-          "403": {
-            "description": "Acesso Negado"
-          },
-          "404": {
-            "description": "Não Encontrado"
-          }
-        }
-      }
-    },
-    "/user": {
-      "post": {
-        "tags": [
-          "Usuários"
-        ],
-        "description": "Rota responsável por criar um usuário vinculado a uma empresa",
-        "parameters": [],
-        "responses": {
-          "201": {
-            "description": "Criado"
-          },
-          "401": {
-            "description": "Não autorizado"
-          },
-          "403": {
-            "description": "Acesso Negado"
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateUser"
-              }
-            }
-          }
-        }
-      },
-      "patch": {
-        "tags": [
-          "Usuários"
-        ],
-        "description": "Rota responsável por atualizar um usuário utilizando seu ID",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Não autorizado"
-          },
-          "403": {
-            "description": "Acesso Negado"
-          },
-          "404": {
-            "description": "Não Encontrado"
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EditUser"
-              }
-            }
-          }
-        }
-      }
-    },
     "/invite": {
       "post": {
         "tags": [
-          "Autenticação"
+          "Envio de e-mail"
         ],
-        "description": "Rota responsável por autenticar um usuário",
+        "description": "Rota responsável por enviar e-mail de convite ao palestrante",
         "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
           }
         },
-        "security": [],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Login"
+                "$ref": "#/components/schemas/SendEmailDefault"
               }
             }
           }
@@ -218,9 +83,9 @@
     "/reminder/day": {
       "post": {
         "tags": [
-          "Autenticação"
+          "Envio de e-mail"
         ],
-        "description": "Rota responsável por autenticar um usuário",
+        "description": "Rota responsável por lebrar os usuários quais eventos ele terá no dia",
         "parameters": [],
         "responses": {
           "200": {
@@ -233,13 +98,12 @@
             "description": "Acesso Negado"
           }
         },
-        "security": [],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Login"
+                "$ref": "#/components/schemas/SendEmailDefault"
               }
             }
           }
@@ -285,6 +149,19 @@
   },
   "components": {
     "schemas": {
+      "SendEmailDefault": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "rennerferreira23@gmail.com"
+          },
+          "name": {
+            "type": "string",
+            "example": "Renner"
+          }
+        }
+      },
       "Login": {
         "type": "object",
         "properties": {
@@ -365,7 +242,7 @@
           },
           "dateOfBirth": {
             "type": "string",
-            "example": "2022-05-30T13:41:16.828Z"
+            "example": "2022-05-30T20:20:52.778Z"
           },
           "companyId": {
             "type": "string",

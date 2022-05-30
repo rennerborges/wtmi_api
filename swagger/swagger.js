@@ -13,8 +13,14 @@ const doc = {
   openapi: '3.0.0',
   info: {
     version: '1.0.0',
-    title: 'API SpeedPoint',
-    description: 'Ambiente com todos os endpoints do Speed Point',
+    title: 'API 4° WTMI',
+    description:
+      'Ambiente com todos os endpoints referentes a API do 4° Workshop de Tecnologias Móveis e para a Internet ',
+    contact: {
+      name: 'Workshop de Tecnologias Móveis e para a Internet',
+      email: 'wtmi.ifgoiano@gmail.com',
+      url: 'https://www.even3.com.br/wtmi/',
+    },
   },
   servers: [
     {
@@ -32,9 +38,9 @@ const doc = {
   produces: ['application/json', 'multipart/form-data'],
   tags: [
     {
-      name: 'Autenticação',
+      name: 'Envio de e-mail',
       description:
-        'Responsável por todo gerenciamento da autenticação no software',
+        'Responsável por todo gerenciamento de envio de e-mail no software',
     },
     {
       name: 'Importação',
@@ -61,6 +67,10 @@ const doc = {
   definitions: {},
   components: {
     schemas: {
+      SendEmailDefault: {
+        email: 'rennerferreira23@gmail.com',
+        name: 'Renner',
+      },
       Login: {
         email: 'renner@gmail.com',
         password: '12345678@Re',
