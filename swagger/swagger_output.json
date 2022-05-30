@@ -7,7 +7,12 @@
   },
   "servers": [
     {
-      "url": "http://localhost:7780/"
+      "url": "http://localhost:7780",
+      "description": "Local"
+    },
+    {
+      "url": "https://wtmi-api.herokuapp.com",
+      "description": "Produção"
     }
   ],
   "tags": [
@@ -195,12 +200,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "401": {
-            "description": "Não autorizado"
-          },
-          "403": {
-            "description": "Acesso Negado"
           }
         },
         "security": [],
@@ -366,7 +365,7 @@
           },
           "dateOfBirth": {
             "type": "string",
-            "example": "2022-05-30T11:26:54.754Z"
+            "example": "2022-05-30T13:41:16.828Z"
           },
           "companyId": {
             "type": "string",

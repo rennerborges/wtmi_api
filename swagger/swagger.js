@@ -16,9 +16,18 @@ const doc = {
     title: 'API SpeedPoint',
     description: 'Ambiente com todos os endpoints do Speed Point',
   },
-  host: `localhost:${process.env.PORT}`,
+  servers: [
+    {
+      url: `http://localhost:${process.env.PORT}`,
+      description: 'Local',
+    },
+    {
+      url: `https://wtmi-api.herokuapp.com`,
+      description: 'Produção',
+    },
+  ],
   basePath: '/',
-  schemes: [],
+  schemes: ['http', 'https'],
   consumes: ['application/json', 'multipart/form-data'],
   produces: ['application/json', 'multipart/form-data'],
   tags: [
