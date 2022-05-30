@@ -1,4 +1,7 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
 import { TransformDateUsa } from '../util/date';
+import schedulersModel from '../models/schedulers';
 
 /* eslint-disable max-len */
 export const ImportSchedule = async (req, res, next) => {
@@ -23,17 +26,24 @@ export const ImportSchedule = async (req, res, next) => {
   */
   try {
     const object = req.jsonFile;
+    const schedulers = [];
 
-    const schedulers = object.map((schedule) => ({
-      code: schedule['Número da atividade'],
-      title: schedule['Título'],
-      initialDate: TransformDateUsa(schedule.Data, schedule['Hora início']),
-      finalDate: TransformDateUsa(schedule.Data, schedule['Hora fim']),
-      location: schedule.Local,
-      vacancyLimit: Number(schedule['Limite de vagas']),
-      numberOfSubscribers: Number(schedule['Quantidade inscritos']),
-      pendingRegistrations: Number(schedule.Pendentes),
-    }));
+    await schedulersModel.deleteMany();
+
+    for (const schedule of object) {
+      const result = await schedulersModel.create({
+        code: schedule['Número da atividade'],
+        title: schedule['Título'],
+        initialDate: TransformDateUsa(schedule.Data, schedule['Hora início']),
+        finalDate: TransformDateUsa(schedule.Data, schedule['Hora fim']),
+        location: schedule.Local,
+        vacancyLimit: Number(schedule['Limite de vagas']),
+        numberOfSubscribers: Number(schedule['Quantidade inscritos']),
+        pendingRegistrations: Number(schedule.Pendentes),
+      });
+
+      schedulers.push(result);
+    }
 
     res.json({ schedulers });
   } catch (error) {
