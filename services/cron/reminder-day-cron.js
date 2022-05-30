@@ -1,5 +1,6 @@
-import cron from 'node-cron';
 import sendEmail from '../email/email-controller';
+import cronValues from './values-cron';
+import { CronSchedule } from './util';
 
 function SendEmailReminderDay() {
   sendEmail({
@@ -9,7 +10,7 @@ function SendEmailReminderDay() {
   });
 }
 
-export default cron.schedule('40 19  * * *', SendEmailReminderDay, {
-  scheduled: true,
-  timezone: 'America/Sao_Paulo',
-});
+export default CronSchedule(
+  cronValues.EVERY_DAY_00_HOURS,
+  SendEmailReminderDay,
+);
