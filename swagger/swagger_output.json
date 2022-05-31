@@ -205,6 +205,26 @@
           }
         }
       }
+    },
+    "/info/users/schedulers": {
+      "get": {
+        "tags": [
+          "Informações"
+        ],
+        "description": "Rota responsável por buscar todas os usuários com suas respectivas inscrições",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          }
+        }
+      }
     }
   },
   "components": {

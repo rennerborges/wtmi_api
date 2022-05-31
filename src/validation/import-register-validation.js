@@ -18,6 +18,11 @@ const ValidationRegisterImport = (req, res, next) => {
       'Inscrição no evento': yup
         .string()
         .required('A inscrição do evento é obrigatória'),
+      Email: yup
+        .string()
+        .email()
+        .required('A inscrição do evento é obrigatória'),
+      Nome: yup.string().required('O nome é obrigatório'),
     }),
   );
 

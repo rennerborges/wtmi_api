@@ -88,6 +88,8 @@ export const ImportRegistered = async (req, res, next) => {
           register['Hora de Inscrição'],
         ),
         typeTicket: register['Inscrição no evento'],
+        email: register.Email,
+        name: register.Nome,
       });
 
       registers.push(result);

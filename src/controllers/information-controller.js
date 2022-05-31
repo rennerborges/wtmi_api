@@ -2,6 +2,7 @@
 import dotenv from 'dotenv';
 import schedulersModel from '../models/schedulers';
 import registersModel from '../models/registers';
+import { getUserAndSchedulers } from '../helpers/information-helper';
 
 dotenv.config({ path: './variables.env' });
 
@@ -29,6 +30,16 @@ export const getSchedulers = async (req, res) => {
   res.json({ schedulers: response });
 };
 
+export const getUsersSchedulers = async (req, res) => {
+  /* #swagger.description = "Rota responsável por buscar todas os usuários com suas respectivas inscrições" */
+  /* #swagger.tags = ["Informações"] */
+
+  const users = await getUserAndSchedulers();
+
+  res.json({ users });
+};
+
 export default {
   getSchedulers,
+  getUsersSchedulers,
 };

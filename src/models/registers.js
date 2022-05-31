@@ -8,6 +8,8 @@ const modelSchema = new mongoose.Schema({
   titleSchedule: String,
   registrationDate: Date,
   typeTicket: String,
+  email: String,
+  name: String,
 });
 
 const modelName = 'registers';
