@@ -10,4 +10,7 @@ function SendEmailReminderDay() {
   });
 }
 
-export default CronSchedule(cronValues.EVERY_DAY_3_HOURS, SendEmailReminderDay);
+export default CronSchedule(
+  cronValues.EVERY_DAY_00_HOURS,
+  SendEmailReminderDay,
+);
