@@ -10,4 +10,4 @@ function SendEmailTeste() {
   });
 }
 
-export default CronSchedule(cronValues.EVERY_1_MINUTE, SendEmailTeste);
+export default CronSchedule(cronValues.EVERY_DAY_9_HOURS, SendEmailTeste);
