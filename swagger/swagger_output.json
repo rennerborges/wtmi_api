@@ -115,7 +115,43 @@
         "tags": [
           "Importação"
         ],
-        "description": "Rota responsável por importas as programações do arquivo gerado pelo Even3",
+        "description": "Rota responsável por importar as programações do arquivo gerado pelo Even3",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/import/registered": {
+      "post": {
+        "tags": [
+          "Importação"
+        ],
+        "description": "Rota responsável por importar as inscrições do arquivo gerado pelo Even3",
         "parameters": [],
         "responses": {
           "200": {
