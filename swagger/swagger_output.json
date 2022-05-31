@@ -22,6 +22,10 @@
   ],
   "tags": [
     {
+      "name": "Informações",
+      "description": "Responsável por todo gerenciamento das informações contidas no software"
+    },
+    {
       "name": "Envio de e-mail",
       "description": "Responsável por todo gerenciamento de envio de e-mail no software"
     },
@@ -178,6 +182,26 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/info/schedulers": {
+      "get": {
+        "tags": [
+          "Informações"
+        ],
+        "description": "Rota responsável por buscar todas as palestras com suas respectivas inscrições",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
           }
         }
       }

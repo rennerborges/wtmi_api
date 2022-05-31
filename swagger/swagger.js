@@ -37,6 +37,11 @@ const doc = {
   produces: ['application/json', 'multipart/form-data'],
   tags: [
     {
+      name: 'Informações',
+      description:
+        'Responsável por todo gerenciamento das informações contidas no software',
+    },
+    {
       name: 'Envio de e-mail',
       description:
         'Responsável por todo gerenciamento de envio de e-mail no software',

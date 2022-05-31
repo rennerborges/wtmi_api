@@ -3,6 +3,7 @@ import express from 'express';
 import userRouters from './user-router';
 import emailRouters from './email-router';
 import infoEven3Routers from './info-even3-router';
+import informationsRouters from './information-router';
 
 const app = express();
 
@@ -16,5 +17,6 @@ app.get('/', (req, res) => {
 app.use(userRouters);
 app.use(emailRouters);
 app.use(infoEven3Routers);
+app.use(informationsRouters);
 
 export default app;
