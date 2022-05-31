@@ -1,8 +1,9 @@
 import SendEmailReminderDay from './reminder-day-cron';
+import SendEmailTeste from './teste-cron';
 
 class ManagerCron {
   constructor() {
-    this.jobs = [SendEmailReminderDay];
+    this.jobs = [SendEmailReminderDay, SendEmailTeste];
   }
 
   run() {
