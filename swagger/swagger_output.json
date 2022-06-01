@@ -12,7 +12,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:7781",
+      "url": "http://localhost:7780",
       "description": "Local"
     },
     {
@@ -212,7 +212,18 @@
           "Informações"
         ],
         "description": "Rota responsável por buscar todas os usuários com suas respectivas inscrições",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "data",
+            "in": "query",
+            "description": "Data das palestras",
+            "required": false,
+            "example": "2022-06-01T12:40:19.267Z",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"

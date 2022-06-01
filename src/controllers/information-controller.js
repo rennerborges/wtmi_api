@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import schedulersModel from '../models/schedulers';
 import registersModel from '../models/registers';
 import { getUserAndSchedulers } from '../helpers/information-helper';
+import { MomentSpeed } from '../util/date';
 
 dotenv.config({ path: './variables.env' });
 
@@ -33,8 +34,21 @@ export const getSchedulers = async (req, res) => {
 export const getUsersSchedulers = async (req, res) => {
   /* #swagger.description = "Rota responsável por buscar todas os usuários com suas respectivas inscrições" */
   /* #swagger.tags = ["Informações"] */
+  /* #swagger.parameters['data'] = {
+      in: "query",
+      description: "Data das palestras",
+      required: false,
+      type: "string",
+      example: "2022-06-01T12:40:19.267Z",
+  } */
 
-  const users = await getUserAndSchedulers();
+  const { data } = req.query;
+
+  const initialDate = MomentSpeed(data);
+
+  const users = await getUserAndSchedulers(
+    initialDate.isValid() ? initialDate : '',
+  );
 
   res.json({ users });
 };
