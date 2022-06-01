@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import schedulersModel from '../models/schedulers';
 import registersModel from '../models/registers';
 import { getUserAndSchedulers } from '../helpers/information-helper';
-import { MomentSpeed } from '../util/date';
+import { FormatDate, MomentSpeed } from '../util/date';
 
 dotenv.config({ path: './variables.env' });
 
@@ -50,6 +50,14 @@ export const getUsersSchedulers = async (req, res) => {
     initialDate?.isValid() ? initialDate : null,
   );
 
+  if (!users.length) {
+    const notFoundMessage = { message: 'Usuários não encontrados' };
+    if (initialDate?.isValid()) {
+      notFoundMessage.initialDateParam = FormatDate('DD/MM/YYYY', initialDate);
+    }
+
+    return res.status(404).json(notFoundMessage);
+  }
   res.json({ users });
 };
 

@@ -233,6 +233,9 @@
           },
           "403": {
             "description": "Acesso Negado"
+          },
+          "404": {
+            "description": "Não Encontrado"
           }
         }
       }
