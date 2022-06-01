@@ -13,9 +13,29 @@ export function FormatDate(format, date) {
   return MomentSpeed(date).format(format);
 }
 
+export function MomentTzString(date) {
+  return MomentSpeed(date).locale('pt-br').tz('America/Sao_Paulo').format();
+}
+
 export function TransformDateUsa(date, hour = '') {
   const [day, mounth, year] = date.split('/');
-  return MomentSpeed(`${year}-${mounth}-${day} ${hour}`);
+
+  const [hours, minutes] = hour.split(':');
+
+  const dateString = `${year}-${mounth}-${day}`;
+
+  const response = MomentSpeed(dateString.trim())
+    .hours(hours || 0)
+    .minutes(minutes || 0)
+    .seconds(0);
+
+  return response;
+}
+
+export function TransformDateUsaString(date, hour = '') {
+  const dateGenerated = TransformDateUsa(date, hour);
+
+  return String(dateGenerated.format());
 }
 
 export function SetZeroDate(date) {

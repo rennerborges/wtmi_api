@@ -6,7 +6,7 @@ const modelSchema = new mongoose.Schema({
   codePartcipant: String,
   codeSchedule: String,
   titleSchedule: String,
-  registrationDate: Date,
+  registrationDate: String,
   typeTicket: String,
   email: String,
   name: String,

@@ -5,8 +5,8 @@ mongoose.Promise = global.Promise;
 const modelSchema = new mongoose.Schema({
   code: String,
   title: String,
-  initialDate: Date,
-  finalDate: Date,
+  initialDate: String,
+  finalDate: String,
   location: String,
   vacancyLimit: Number,
   numberOfSubscribers: Number,
