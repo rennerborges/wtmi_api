@@ -44,10 +44,10 @@ export const getUsersSchedulers = async (req, res) => {
 
   const { data } = req.query;
 
-  const initialDate = MomentSpeed(data);
+  const initialDate = data ? MomentSpeed(data) : null;
 
   const users = await getUserAndSchedulers(
-    initialDate.isValid() ? initialDate : '',
+    initialDate?.isValid() ? initialDate : null,
   );
 
   res.json({ users });
