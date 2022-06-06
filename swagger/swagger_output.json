@@ -114,6 +114,36 @@
         }
       }
     },
+    "/sponsors/invite": {
+      "post": {
+        "tags": [
+          "Envio de e-mail"
+        ],
+        "description": "Rota responsável por lebrar os usuários quais eventos ele terá no dia",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendEmailDefault"
+              }
+            }
+          }
+        }
+      }
+    },
     "/import/schedule": {
       "post": {
         "tags": [

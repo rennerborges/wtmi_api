@@ -19,4 +19,11 @@ router.post(
   emailController.postReminderDay,
 );
 
+router.post(
+  '/sponsors/invite',
+  ValidatorSendEmailDefault,
+  Auth(),
+  emailController.postSponsorsInvite,
+);
+
 export default router;

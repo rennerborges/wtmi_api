@@ -730,203 +730,267 @@ export default function getTemplateReminderUser({ username }) {
 													
 															<div style="text-align: left;">Atenciosamente,</div>
 	
-	<div style="text-align: left;">Comissão do 4° WTMI Até breve!!!</div>
-	
-													</td>
-											</tr>
-									</tbody></table>
-					<!--[if mso]>
-					</td>
-					<![endif]-->
-									
-					<!--[if mso]>
-					</tr>
-					</table>
-					<![endif]-->
-							</td>
-					</tr>
-			</tbody>
-	</table></td>
-															</tr>
-															<tr>
-																	<td valign="top" id="templateFooter"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowBlock" style="min-width:100%;">
-			<tbody class="mcnFollowBlockOuter">
-					<tr>
-							<td align="center" valign="top" style="padding:9px" class="mcnFollowBlockInner">
-									<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentContainer" style="min-width:100%;">
-			<tbody><tr>
-					<td align="center" style="padding-left:9px;padding-right:9px;">
-							<table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnFollowContent">
-									<tbody><tr>
-											<td align="center" valign="top" style="padding-top:9px; padding-right:9px; padding-left:9px;">
-													<table align="center" border="0" cellpadding="0" cellspacing="0">
-															<tbody><tr>
-																	<td align="center" valign="top">
-																			<!--[if mso]>
-																			<table align="center" border="0" cellspacing="0" cellpadding="0">
-																			<tr>
-																			<![endif]-->
-																			
-																					<!--[if mso]>
-																					<td align="center" valign="top">
-																					<![endif]-->
-																					
-																					
-																							<table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
-																									<tbody><tr>
-																											<td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
-																													<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
-																															<tbody><tr>
-																																	<td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
-																																			<table align="left" border="0" cellpadding="0" cellspacing="0" width="">
-																																					<tbody><tr>
-																																							
-																																									<td align="center" valign="middle" width="24" class="mcnFollowIconContent">
-																																											<a href="http://instagram.com" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-instagram-48.png" alt="Instagram" style="display:block;" height="24" width="24" class=""></a>
-																																									</td>
-																																							
-																																							
-																																					</tr>
-																																			</tbody></table>
-																																	</td>
-																															</tr>
-																													</tbody></table>
-																											</td>
-																									</tr>
-																							</tbody></table>
-																					
-																					<!--[if mso]>
-																					</td>
-																					<![endif]-->
-																			
-																					<!--[if mso]>
-																					<td align="center" valign="top">
-																					<![endif]-->
-																					
-																					
-																							<table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
-																									<tbody><tr>
-																											<td valign="top" style="padding-right:0; padding-bottom:9px;" class="mcnFollowContentItemContainer">
-																													<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
-																															<tbody><tr>
-																																	<td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
-																																			<table align="left" border="0" cellpadding="0" cellspacing="0" width="">
-																																					<tbody><tr>
-																																							
-																																									<td align="center" valign="middle" width="24" class="mcnFollowIconContent">
-																																											<a href="http://www.facebook.com" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-facebook-48.png" alt="Facebook" style="display:block;" height="24" width="24" class=""></a>
-																																									</td>
-																																							
-																																							
-																																					</tr>
-																																			</tbody></table>
-																																	</td>
-																															</tr>
-																													</tbody></table>
-																											</td>
-																									</tr>
-																							</tbody></table>
-																					
-																					<!--[if mso]>
-																					</td>
-																					<![endif]-->
-																			
-																			<!--[if mso]>
-																			</tr>
-																			</table>
-																			<![endif]-->
-																	</td>
-															</tr>
-													</tbody></table>
-											</td>
-									</tr>
-							</tbody></table>
-					</td>
-			</tr>
-	</tbody></table>
-	
-							</td>
-					</tr>
-			</tbody>
-	</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
-			<tbody class="mcnDividerBlockOuter">
-					<tr>
-							<td class="mcnDividerBlockInner" style="min-width: 100%; padding: 10px 18px 25px;">
-									<table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 2px solid #EEEEEE;">
-											<tbody><tr>
-													<td>
-															<span></span>
-													</td>
-											</tr>
-									</tbody></table>
-	<!--            
-									<td class="mcnDividerBlockInner" style="padding: 18px;">
-									<hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
-	-->
-							</td>
-					</tr>
-			</tbody>
-	</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
-			<tbody class="mcnTextBlockOuter">
-					<tr>
-							<td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
-									<!--[if mso]>
-					<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-					<tr>
-					<![endif]-->
-						
-					<!--[if mso]>
-					<td valign="top" width="600" style="width:600px;">
-					<![endif]-->
-									<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
-											<tbody><tr>
-													
-													<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-													
-															<span style="font-size:18px"><strong>Dúvidas?&nbsp;</strong></span><br>
-	<br>
-	<strong>Presidente:</strong><br>
-	Renner Borges Ferreira<br>
-	(64) 9 9295-4946<br>
-	<a href="mailto:renner.borges@estudante.ifgoiano.edu.br" target="_blank">renner.borges@estudante.ifgoiano.edu.br</a><br>
-	<br>
-	<strong>Vice Presidente:</strong><br>
-	Warley Lopes Cardoso de Jesus<br>
-	(64) 9 9345-4182<br>
-	<a href="mailto:warley.lopes@estudante.ifgoiano.edu.br" target="_blank">warley.lopes@estudante.ifgoiano.edu.br</a><br>
-	<br>
-	<strong>Coordenador:</strong><br>
-	Odilon Fernandes Neto<br>
-	(64) 9 8111-6135<br>
-	<a href="mailto:odilon.neto@ifgoiano.edu.br" target="_blank">odilon.neto@ifgoiano.edu.br</a>
-													</td>
-											</tr>
-									</tbody></table>
-					<!--[if mso]>
-					</td>
-					<![endif]-->
-									
-					<!--[if mso]>
-					</tr>
-					</table>
-					<![endif]-->
-							</td>
-					</tr>
-			</tbody>
-	</table></td>
-															</tr>
-													</table>
-													<!--[if (gte mso 9)|(IE)]>
-													</td>
+															<div style="text-align: left;">Comissão do 4° WTMI.&nbsp;Até breve!!!</div>
+
+															</td>
 													</tr>
-													</table>
-													<![endif]-->
-													<!-- // END TEMPLATE -->
-											</td>
-									</tr>
+											</tbody></table>
+							<!--[if mso]>
+							</td>
+							<![endif]-->
+											
+							<!--[if mso]>
+							</tr>
 							</table>
-					</center>
-			<script type="text/javascript"  src="/RIH_CFPlugPm0/FWharr/Y5VziL_c/OGc12VJ4/IhkYIg/PHAcG2gO/CRY"></script></body>
-	</html>
+							<![endif]-->
+									</td>
+							</tr>
+					</tbody>
+			</table></td>
+																	</tr>
+																	<tr>
+																			<td valign="top" id="templateFooter"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowBlock" style="min-width:100%;">
+					<tbody class="mcnFollowBlockOuter">
+							<tr>
+									<td align="center" valign="top" style="padding:9px" class="mcnFollowBlockInner">
+											<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentContainer" style="min-width:100%;">
+					<tbody><tr>
+							<td align="center" style="padding-left:9px;padding-right:9px;">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnFollowContent">
+											<tbody><tr>
+													<td align="center" valign="top" style="padding-top:9px; padding-right:9px; padding-left:9px;">
+															<table align="center" border="0" cellpadding="0" cellspacing="0">
+																	<tbody><tr>
+																			<td align="center" valign="top">
+																					<!--[if mso]>
+																					<table align="center" border="0" cellspacing="0" cellpadding="0">
+																					<tr>
+																					<![endif]-->
+																					
+																							<!--[if mso]>
+																							<td align="center" valign="top">
+																							<![endif]-->
+																							
+																							
+																									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+																											<tbody><tr>
+																													<td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+																															<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+																																	<tbody><tr>
+																																			<td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+																																					<table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+																																							<tbody><tr>
+																																									
+																																											<td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+																																													<a href="https://instagram.com/wtmi.ifgoiano?igshid=YmMyMTA2M2Y=" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-instagram-48.png" alt="Instagram" style="display:block;" height="24" width="24" class=""></a>
+																																											</td>
+																																									
+																																									
+																																							</tr>
+																																					</tbody></table>
+																																			</td>
+																																	</tr>
+																															</tbody></table>
+																													</td>
+																											</tr>
+																									</tbody></table>
+																							
+																							<!--[if mso]>
+																							</td>
+																							<![endif]-->
+																					
+																							<!--[if mso]>
+																							<td align="center" valign="top">
+																							<![endif]-->
+																							
+																							
+																									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+																											<tbody><tr>
+																													<td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+																															<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+																																	<tbody><tr>
+																																			<td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+																																					<table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+																																							<tbody><tr>
+																																									
+																																											<td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+																																													<a href="https://www.youtube.com/channel/UCvTvYzglKyjEm_tUtlwXv2w" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-youtube-48.png" alt="YouTube" style="display:block;" height="24" width="24" class=""></a>
+																																											</td>
+																																									
+																																									
+																																							</tr>
+																																					</tbody></table>
+																																			</td>
+																																	</tr>
+																															</tbody></table>
+																													</td>
+																											</tr>
+																									</tbody></table>
+																							
+																							<!--[if mso]>
+																							</td>
+																							<![endif]-->
+																					
+																							<!--[if mso]>
+																							<td align="center" valign="top">
+																							<![endif]-->
+																							
+																							
+																									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+																											<tbody><tr>
+																													<td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+																															<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+																																	<tbody><tr>
+																																			<td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+																																					<table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+																																							<tbody><tr>
+																																									
+																																											<td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+																																													<a href="mailto:wtmi.ifgoiano@gmail.com" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-forwardtofriend-48.png" alt="Email" style="display:block;" height="24" width="24" class=""></a>
+																																											</td>
+																																									
+																																									
+																																							</tr>
+																																					</tbody></table>
+																																			</td>
+																																	</tr>
+																															</tbody></table>
+																													</td>
+																											</tr>
+																									</tbody></table>
+																							
+																							<!--[if mso]>
+																							</td>
+																							<![endif]-->
+																					
+																							<!--[if mso]>
+																							<td align="center" valign="top">
+																							<![endif]-->
+																							
+																							
+																									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+																											<tbody><tr>
+																													<td valign="top" style="padding-right:0; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+																															<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+																																	<tbody><tr>
+																																			<td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
+																																					<table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+																																							<tbody><tr>
+																																									
+																																											<td align="center" valign="middle" width="24" class="mcnFollowIconContent">
+																																													<a href="https://www.even3.com.br/wtmi/" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-link-48.png" alt="Website" style="display:block;" height="24" width="24" class=""></a>
+																																											</td>
+																																									
+																																									
+																																							</tr>
+																																					</tbody></table>
+																																			</td>
+																																	</tr>
+																															</tbody></table>
+																													</td>
+																											</tr>
+																									</tbody></table>
+																							
+																							<!--[if mso]>
+																							</td>
+																							<![endif]-->
+																					
+																					<!--[if mso]>
+																					</tr>
+																					</table>
+																					<![endif]-->
+																			</td>
+																	</tr>
+															</tbody></table>
+													</td>
+											</tr>
+									</tbody></table>
+							</td>
+					</tr>
+			</tbody></table>
+			
+									</td>
+							</tr>
+					</tbody>
+			</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
+					<tbody class="mcnDividerBlockOuter">
+							<tr>
+									<td class="mcnDividerBlockInner" style="min-width: 100%; padding: 10px 18px 25px;">
+											<table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 2px solid #EEEEEE;">
+													<tbody><tr>
+															<td>
+																	<span></span>
+															</td>
+													</tr>
+											</tbody></table>
+			<!--            
+											<td class="mcnDividerBlockInner" style="padding: 18px;">
+											<hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+			-->
+									</td>
+							</tr>
+					</tbody>
+			</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+					<tbody class="mcnTextBlockOuter">
+							<tr>
+									<td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+											<!--[if mso]>
+							<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+							<tr>
+							<![endif]-->
+								
+							<!--[if mso]>
+							<td valign="top" width="600" style="width:600px;">
+							<![endif]-->
+											<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+													<tbody><tr>
+															
+															<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+															
+																	<span style="font-size:18px"><strong>Dúvidas?&nbsp;</strong></span><br>
+			<br>
+			<strong>Presidente:</strong><br>
+			Renner Borges Ferreira<br>
+			(64) 9 9295-4946<br>
+			<a href="mailto:renner.borges@estudante.ifgoiano.edu.br" target="_blank">renner.borges@estudante.ifgoiano.edu.br</a><br>
+			<br>
+			<strong>Vice Presidente:</strong><br>
+			Warley Lopes Cardoso de Jesus<br>
+			(64) 9 9345-4182<br>
+			<a href="mailto:warley.lopes@estudante.ifgoiano.edu.br" target="_blank">warley.lopes@estudante.ifgoiano.edu.br</a><br>
+			<br>
+			<strong>Coordenador:</strong><br>
+			Odilon Fernandes Neto<br>
+			(64) 9 8111-6135<br>
+			<a href="mailto:odilon.neto@ifgoiano.edu.br" target="_blank">odilon.neto@ifgoiano.edu.br</a>
+															</td>
+													</tr>
+											</tbody></table>
+							<!--[if mso]>
+							</td>
+							<![endif]-->
+											
+							<!--[if mso]>
+							</tr>
+							</table>
+							<![endif]-->
+									</td>
+							</tr>
+					</tbody>
+			</table></td>
+																	</tr>
+															</table>
+															<!--[if (gte mso 9)|(IE)]>
+															</td>
+															</tr>
+															</table>
+															<![endif]-->
+															<!-- // END TEMPLATE -->
+													</td>
+											</tr>
+									</table>
+							</center>
+					<script type="text/javascript"  src="/vzPwPATbm/AY0T-Yfcg/m7ErLSGDaQ9Q/BS8eYThxBg/CC/MDD2IrOlM"></script></body>
+			</html>
 	`;
 }
