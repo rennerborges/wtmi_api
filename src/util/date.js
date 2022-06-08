@@ -43,10 +43,5 @@ export function SetZeroDate(date) {
 }
 
 export function IsBetween(date, initialDate, finalDate) {
-  return MomentSpeed(SetZeroDate(date)).isBetween(
-    SetZeroDate(initialDate).format('YYYY-MM-DD'),
-    SetZeroDate(finalDate).format('YYYY-MM-DD'),
-    undefined,
-    '[]',
-  );
+  return MomentSpeed(date).isBetween(initialDate, finalDate, undefined, '[]');
 }

@@ -61,6 +61,46 @@ export const getUsersSchedulers = async (req, res) => {
   res.json({ users });
 };
 
+export const getSchedulersNowByRoom = async (req, res) => {
+  /* #swagger.description = "Rota responsável por buscar a programação atual da sala" */
+  /* #swagger.tags = ["Informações"] */
+  /* #swagger.parameters['nameRoom'] = {
+      in: "path",
+      description: "Nome da sala",
+      required: true,
+      type: "string",
+      example: "Sala 1",
+  } */
+
+  const { nameRoom } = req.params;
+
+  const schedulers = await schedulersModel
+    .find({
+      location: nameRoom,
+    })
+    .sort({ initialDate: 'asc' });
+
+  const dateNow = MomentSpeed();
+
+  const schedulersFilters = schedulers.filter((scheduler) => {
+    const dateInicialScheduler = MomentSpeed(
+      scheduler.initialDate,
+    ).toISOString();
+
+    const dateFinalScheduler = MomentSpeed(scheduler.finalDate).toISOString();
+
+    return IsBetween(dateNow, dateInicialScheduler, dateFinalScheduler);
+  });
+
+  if (!schedulersFilters.length) {
+    return res.status(404).json({
+      message: 'Não está acontecendo nenhuma programação para esse horário',
+    });
+  }
+
+  res.json({ scheduler: schedulersFilters[0] });
+};
+
 export const getSchedulersByRoom = async (req, res) => {
   /* #swagger.description = "Rota responsável por buscar todas os eventos daquela sala" */
   /* #swagger.tags = ["Informações"] */
@@ -80,7 +120,7 @@ export const getSchedulersByRoom = async (req, res) => {
     })
     .sort({ initialDate: 'asc' });
 
-  const dateNow = SetZeroDate();
+  const dateNow = SetZeroDate().format('YYYY-MM-DD');
 
   const schedulersFilters = schedulers.filter((scheduler) => {
     const dateInicialScheduler = SetZeroDate(scheduler.initialDate);
@@ -94,11 +134,12 @@ export const getSchedulersByRoom = async (req, res) => {
       .json({ message: 'Não existe programação para essa sala hoje' });
   }
 
-  res.json({ scheduler: schedulersFilters[0] });
+  res.json({ scheduler: schedulersFilters });
 };
 
 export default {
   getSchedulers,
   getUsersSchedulers,
+  getSchedulersNowByRoom,
   getSchedulersByRoom,
 };

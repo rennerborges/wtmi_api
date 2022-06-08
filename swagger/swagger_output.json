@@ -270,6 +270,34 @@
         }
       }
     },
+    "/info/room/{nameRoom}/scheduler": {
+      "get": {
+        "tags": [
+          "Informações"
+        ],
+        "description": "Rota responsável por buscar a programação atual da sala",
+        "parameters": [
+          {
+            "name": "nameRoom",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Nome da sala",
+            "example": "Sala 1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          }
+        }
+      }
+    },
     "/info/room/{nameRoom}/schedulers": {
       "get": {
         "tags": [
@@ -291,6 +319,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "404": {
+            "description": "Não Encontrado"
           }
         }
       }

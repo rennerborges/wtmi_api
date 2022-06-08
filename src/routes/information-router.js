@@ -13,6 +13,11 @@ router.get(
 );
 
 router.get(
+  '/info/room/:nameRoom/scheduler/now',
+  informationController.getSchedulersNowByRoom,
+);
+
+router.get(
   '/info/room/:nameRoom/schedulers',
   informationController.getSchedulersByRoom,
 );

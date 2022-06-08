@@ -1,6 +1,6 @@
 import schedulersModel from '../models/schedulers';
 import registersModel from '../models/registers';
-import { IsBetween } from '../util/date';
+import { IsBetween, SetZeroDate } from '../util/date';
 
 export const getUserAndSchedulers = async (initialDate) => {
   const schedulers = await schedulersModel.find();
@@ -11,7 +11,11 @@ export const getUserAndSchedulers = async (initialDate) => {
   schedulers.forEach((scheduler) => {
     if (
       !initialDate ||
-      IsBetween(initialDate, scheduler.initialDate, scheduler.finalDate)
+      IsBetween(
+        SetZeroDate(initialDate),
+        SetZeroDate(scheduler.initialDate).format('YYYY-MM-DD'),
+        SetZeroDate(scheduler.finalDate).format('YYYY-MM-DD'),
+      )
     ) {
       schedulersMap[scheduler.code] = scheduler;
     }
