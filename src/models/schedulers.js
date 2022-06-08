@@ -11,7 +11,6 @@ const modelSchema = new mongoose.Schema({
   vacancyLimit: Number,
   numberOfSubscribers: Number,
   pendingRegistrations: Number,
-  isPresence: Boolean,
 });
 
 const modelName = 'schedulers';

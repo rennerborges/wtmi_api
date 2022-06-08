@@ -10,6 +10,7 @@ const modelSchema = new mongoose.Schema({
   typeTicket: String,
   email: String,
   name: String,
+  isPresence: Boolean,
 });
 
 const modelName = 'registers';

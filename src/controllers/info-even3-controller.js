@@ -86,10 +86,8 @@ export const ImportRegistered = async (req, res, next) => {
     const object = req.jsonFile;
     const registers = [];
 
-    await registersModel.deleteMany();
-
     for (const register of object) {
-      const result = await registersModel.create({
+      const bodyUser = {
         codePartcipant: register['Id do participante'],
         codeSchedule: register.Id,
         titleSchedule: register.Atividade,
@@ -100,12 +98,29 @@ export const ImportRegistered = async (req, res, next) => {
         typeTicket: register['Inscrição no evento'],
         email: register.Email,
         name: register.Nome,
-      });
+      };
 
-      registers.push(result);
+      let user;
+
+      user = await registersModel.findOneAndUpdate(
+        {
+          codePartcipant: bodyUser.codePartcipant,
+          codeSchedule: bodyUser.codeSchedule,
+        },
+        bodyUser,
+      );
+
+      if (!user) {
+        user = await registersModel.create({
+          ...bodyUser,
+          isPresence: false,
+        });
+      }
+
+      registers.push(user);
     }
 
-    res.json({ registers });
+    return res.json({ registers });
   } catch (error) {
     next(error);
   }
