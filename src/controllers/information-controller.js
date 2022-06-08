@@ -127,6 +127,7 @@ export const getSchedulersByRoom = async (req, res) => {
     const dateInicialScheduler = SetZeroDate(scheduler.initialDate);
     console.log('dateNow', dateNow);
     console.log('dateInicialScheduler', dateInicialScheduler);
+    console.log('IsBetween', IsBetween(dateInicialScheduler, dateNow, dateNow));
     return IsBetween(dateInicialScheduler, dateNow, dateNow);
   });
 
