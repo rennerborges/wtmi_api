@@ -183,6 +183,20 @@ export const setPresenceScheduler = async (req, res, next) => {
         .json({ message: 'Usuário já registrou sua presença nessa palestra!' });
     }
 
+    const dateNow = MomentSpeed();
+
+    const dateInicialScheduler = MomentSpeed(
+      scheduler.initialDate,
+    ).toISOString();
+
+    const dateFinalScheduler = MomentSpeed(scheduler.finalDate)
+      .add(30, 'minute')
+      .toISOString();
+
+    if (!IsBetween(dateNow, dateInicialScheduler, dateFinalScheduler)) {
+      throw new Error('O tempo de registrar sua a presença já expirou');
+    }
+
     await registersModel.findOneAndUpdate(
       {
         email,
@@ -191,7 +205,9 @@ export const setPresenceScheduler = async (req, res, next) => {
       { isPresence: true },
     );
 
-    res.status(201).json({ message: 'Registro realizado com sucesso!' });
+    res
+      .status(201)
+      .json({ message: 'Registro realizado com sucesso!', scheduler });
   } catch (error) {
     next(error);
   }
