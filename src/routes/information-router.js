@@ -12,4 +12,9 @@ router.get(
   informationController.getUsersSchedulers,
 );
 
+router.get(
+  '/info/room/:nameRoom/schedulers',
+  informationController.getSchedulersByRoom,
+);
+
 export default router;

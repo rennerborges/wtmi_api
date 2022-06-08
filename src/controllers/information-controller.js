@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import schedulersModel from '../models/schedulers';
 import registersModel from '../models/registers';
 import { getUserAndSchedulers } from '../helpers/information-helper';
-import { FormatDate, MomentSpeed } from '../util/date';
+import { FormatDate, IsBetween, MomentSpeed, SetZeroDate } from '../util/date';
 
 dotenv.config({ path: './variables.env' });
 
@@ -61,7 +61,44 @@ export const getUsersSchedulers = async (req, res) => {
   res.json({ users });
 };
 
+export const getSchedulersByRoom = async (req, res) => {
+  /* #swagger.description = "Rota responsável por buscar todas os eventos daquela sala" */
+  /* #swagger.tags = ["Informações"] */
+  /* #swagger.parameters['nameRoom'] = {
+      in: "path",
+      description: "Nome da sala",
+      required: true,
+      type: "string",
+      example: "Sala 1",
+  } */
+
+  const { nameRoom } = req.params;
+
+  const schedulers = await schedulersModel
+    .find({
+      location: nameRoom,
+    })
+    .sort({ initialDate: 'asc' });
+
+  const dateNow = SetZeroDate();
+
+  const schedulersFilters = schedulers.filter((scheduler) => {
+    const dateInicialScheduler = SetZeroDate(scheduler.initialDate);
+
+    return IsBetween(dateInicialScheduler, dateNow, dateNow);
+  });
+
+  if (!schedulersFilters.length) {
+    return res
+      .status(404)
+      .json({ message: 'Não existe programação para essa sala hoje' });
+  }
+
+  res.json({ scheduler: schedulersFilters[0] });
+};
+
 export default {
   getSchedulers,
   getUsersSchedulers,
+  getSchedulersByRoom,
 };
