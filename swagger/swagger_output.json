@@ -270,7 +270,7 @@
         }
       }
     },
-    "/info/room/{nameRoom}/scheduler": {
+    "/info/room/{nameRoom}/scheduler/now": {
       "get": {
         "tags": [
           "Informações"
@@ -325,6 +325,47 @@
           }
         }
       }
+    },
+    "/scheduler/{code}/confirm/presence": {
+      "post": {
+        "tags": [
+          "Informações"
+        ],
+        "description": "Rota responsável por registrar a presença do usuário em uma palestra",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Código da palestra",
+            "example": "65484"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmPresence"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -339,6 +380,15 @@
           "name": {
             "type": "string",
             "example": "Renner"
+          }
+        }
+      },
+      "ConfirmPresence": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "rennerferreira23@gmail.com"
           }
         }
       }

@@ -75,6 +75,9 @@ const doc = {
         email: 'rennerferreira23@gmail.com',
         name: 'Renner',
       },
+      ConfirmPresence: {
+        email: 'rennerferreira23@gmail.com',
+      },
     },
   },
 };

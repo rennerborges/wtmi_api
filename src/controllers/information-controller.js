@@ -137,9 +137,70 @@ export const getSchedulersByRoom = async (req, res) => {
   res.json({ scheduler: schedulersFilters });
 };
 
+export const setPresenceScheduler = async (req, res, next) => {
+  /* #swagger.description = "Rota responsável por registrar a presença do usuário em uma palestra" */
+  /* #swagger.tags = ["Informações"] */
+  /* #swagger.parameters['code'] = {
+      in: "path",
+      description: "Código da palestra",
+      required: true,
+      type: "string",
+      example: "65484",
+  } */
+  /* #swagger.requestBody = { 
+    required: true, 
+    content: { 
+      "application/json": { 
+        schema: { $ref: "#/components/schemas/ConfirmPresence" }, 
+      } 
+    } 
+    } 
+  */
+  try {
+    const { code } = req.params;
+    const { email } = req.body;
+
+    const scheduler = await schedulersModel.findOne({
+      code,
+    });
+
+    if (!scheduler) {
+      return res.status(404).json({ message: 'Não encontramos esse evento' });
+    }
+
+    const alreadyRegister = await registersModel.findOne({
+      email,
+      code,
+    });
+
+    if (!alreadyRegister) {
+      throw new Error('Usuário não vinculado na palestra');
+    }
+
+    if (alreadyRegister.isPresence) {
+      res
+        .status(409)
+        .json({ message: 'Usuário já registrou sua presença nessa palestra!' });
+    }
+
+    await registersModel.findOneAndUpdate(
+      {
+        email,
+        code,
+      },
+      { isPresence: true },
+    );
+
+    res.status(201).json({ message: 'Registro realizado com sucesso!' });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export default {
   getSchedulers,
   getUsersSchedulers,
   getSchedulersNowByRoom,
   getSchedulersByRoom,
+  setPresenceScheduler,
 };
