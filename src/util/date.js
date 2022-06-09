@@ -43,7 +43,5 @@ export function SetZeroDate(date) {
 }
 
 export function IsBetween(date, initialDate, finalDate) {
-  // eslint-disable-next-line no-console
-  console.log('iso', date.toISOString());
   return date.isBetween(initialDate, finalDate, undefined, '[]');
 }

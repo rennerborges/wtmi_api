@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable max-len */
 import dotenv from 'dotenv';
 import schedulersModel from '../models/schedulers';
@@ -125,9 +124,7 @@ export const getSchedulersByRoom = async (req, res) => {
 
   const schedulersFilters = schedulers.filter((scheduler) => {
     const dateInicialScheduler = SetZeroDate(scheduler.initialDate);
-    console.log('dateNow', dateNow);
-    console.log('dateInicialScheduler', dateInicialScheduler);
-    console.log('IsBetween', IsBetween(dateInicialScheduler, dateNow, dateNow));
+
     return IsBetween(dateInicialScheduler, dateNow, dateNow);
   });
 
