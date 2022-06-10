@@ -270,7 +270,7 @@
         }
       }
     },
-    "/info/room/{nameRoom}/scheduler/now": {
+    "/info/scheduler/{codeScheduler}": {
       "get": {
         "tags": [
           "Informações"
@@ -278,14 +278,14 @@
         "description": "Rota responsável por buscar a programação atual da sala",
         "parameters": [
           {
-            "name": "nameRoom",
+            "name": "codeScheduler",
             "in": "path",
             "required": true,
             "schema": {
               "type": "string"
             },
-            "description": "Nome da sala",
-            "example": "Sala 1"
+            "description": "Código da palestra",
+            "example": "S6546"
           }
         ],
         "responses": {

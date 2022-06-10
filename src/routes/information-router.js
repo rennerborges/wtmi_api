@@ -14,8 +14,8 @@ router.get(
 );
 
 router.get(
-  '/info/room/:nameRoom/scheduler/now',
-  informationController.getSchedulersNowByRoom,
+  '/info/scheduler/:codeScheduler',
+  informationController.getSchedulerByCode,
 );
 
 router.get(

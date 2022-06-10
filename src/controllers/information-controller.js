@@ -61,44 +61,46 @@ export const getUsersSchedulers = async (req, res) => {
   res.json({ users });
 };
 
-export const getSchedulersNowByRoom = async (req, res) => {
+export const getSchedulerByCode = async (req, res, next) => {
   /* #swagger.description = "Rota responsável por buscar a programação atual da sala" */
   /* #swagger.tags = ["Informações"] */
-  /* #swagger.parameters['nameRoom'] = {
+  /* #swagger.parameters['codeScheduler'] = {
       in: "path",
-      description: "Nome da sala",
+      description: "Código da palestra",
       required: true,
       type: "string",
-      example: "Sala 1",
+      example: "S6546",
   } */
 
-  const { nameRoom } = req.params;
+  try {
+    const { codeScheduler } = req.params;
 
-  const schedulers = await schedulersModel
-    .find({
-      location: nameRoom,
-    })
-    .sort({ initialDate: 'asc' });
-
-  const dateNow = MomentSpeed();
-
-  const schedulersFilters = schedulers.filter((scheduler) => {
-    const dateInicialScheduler = MomentSpeed(
-      scheduler.initialDate,
-    ).toISOString();
-
-    const dateFinalScheduler = MomentSpeed(scheduler.finalDate).toISOString();
-
-    return IsBetween(dateNow, dateInicialScheduler, dateFinalScheduler);
-  });
-
-  if (!schedulersFilters.length) {
-    return res.status(404).json({
-      message: 'Não está acontecendo nenhuma programação para esse horário',
+    const scheduler = await schedulersModel.findOne({
+      code: codeScheduler,
     });
-  }
 
-  res.json({ scheduler: schedulersFilters[0] });
+    if (!scheduler) {
+      return res.status(404).json({ message: 'Programação não encontrada' });
+    }
+
+    const dateNow = MomentSpeed();
+
+    const dateInicialScheduler = MomentSpeed(scheduler.initialDate);
+
+    const dateFinalScheduler = MomentSpeed(scheduler.finalDate)
+      .add(30, 'minute')
+      .toISOString();
+
+    if (!IsBetween(dateNow, dateInicialScheduler, dateFinalScheduler)) {
+      return res.status(404).json({
+        message: 'Não está acontecendo nenhuma programação para esse horário',
+      });
+    }
+
+    res.json({ scheduler });
+  } catch (error) {
+    next(error);
+  }
 };
 
 export const getSchedulersByRoom = async (req, res) => {
@@ -216,7 +218,7 @@ export const setPresenceScheduler = async (req, res, next) => {
 export default {
   getSchedulers,
   getUsersSchedulers,
-  getSchedulersNowByRoom,
+  getSchedulerByCode,
   getSchedulersByRoom,
   setPresenceScheduler,
 };
