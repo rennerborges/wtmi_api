@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 export const errorSend = (err, req, res, next) => {
-  const response = { error: err.message };
+  const response = { message: err.message };
 
   if (err.path) {
     response.path = err.path;
