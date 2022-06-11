@@ -4,9 +4,11 @@ import cronValues from './values-cron';
 import { CronSchedule } from './util';
 import { getUserAndSchedulers } from '../../src/helpers/information-helper';
 import getTemplateReminderUser from '../email/templates/reminderDay';
+import { MomentTzString } from '../../src/util/date';
 
 export async function SendEmailReminderDay() {
-  const users = await getUserAndSchedulers();
+  const dateNow = MomentTzString();
+  const users = await getUserAndSchedulers(dateNow);
   users.forEach((user) => {
     const templateEmail = getTemplateReminderUser({
       username: user.name,
