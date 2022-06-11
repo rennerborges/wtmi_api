@@ -606,9 +606,9 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 																			<td valign="top" class="mcnTextContent" style="padding: 18px;color: #6351AD;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: normal;line-height: 150%;text-align: left;">
 																					<div style="text-align: left;"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><strong>Caro ${username}!&nbsp;</strong></span><br>
 	&nbsp;</div>
-	Hoje <strong>${MomentSpeed().format(
-    'DD/MM/YYYY',
-  )}</strong> você terá <strong>três </strong>palestras agendadas no IF Goiano Campus Morrinhos no prédio do Núcleo da computação!&nbsp;</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
+	Hoje <strong>${MomentSpeed().format('LL')}</strong> você terá <strong>${
+    schedulers.length
+  } </strong>palestras agendadas no IF Goiano Campus Morrinhos no prédio do Núcleo da computação!&nbsp;</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
 			<tbody class="mcnDividerBlockOuter">
 					<tr>
 							<td class="mcnDividerBlockInner" style="min-width:100%; padding:18px;">
