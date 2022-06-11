@@ -122,12 +122,17 @@ export const getSchedulersByRoom = async (req, res) => {
     })
     .sort({ initialDate: 'asc' });
 
-  const dateNow = SetZeroDate().format('YYYY-MM-DD');
+  const date = SetZeroDate().format('YYYY-MM-DD');
+  const dateNow = MomentSpeed();
 
   const schedulersFilters = schedulers.filter((scheduler) => {
     const dateInicialScheduler = SetZeroDate(scheduler.initialDate);
+    const dateFinalScheduler = MomentSpeed(scheduler.finalDate);
 
-    return IsBetween(dateInicialScheduler, dateNow, dateNow);
+    return (
+      IsBetween(dateInicialScheduler, date, date) &&
+      dateFinalScheduler.isAfter(dateNow.subtract(30, 'minute'))
+    );
   });
 
   if (!schedulersFilters.length) {
