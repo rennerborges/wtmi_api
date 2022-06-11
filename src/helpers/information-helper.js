@@ -1,6 +1,7 @@
 import schedulersModel from '../models/schedulers';
 import registersModel from '../models/registers';
 import { IsBetween, SetZeroDate } from '../util/date';
+import { orderByKeyObject } from '../util/order';
 
 export const getUserAndSchedulers = async (initialDate) => {
   const schedulers = await schedulersModel.find();
@@ -39,7 +40,10 @@ export const getUserAndSchedulers = async (initialDate) => {
     }
   });
 
-  return Object.values(usersMap);
+  return Object.values(usersMap).map((item) => ({
+    ...item,
+    schedulers: orderByKeyObject(item.schedulers, 'initialDate', 'ASC'),
+  }));
 };
 
 export default {

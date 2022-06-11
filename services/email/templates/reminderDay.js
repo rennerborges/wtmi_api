@@ -211,8 +211,8 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 				/*@editable*/background-size:cover;
 				/*@editable*/border-top:0;
 				/*@editable*/border-bottom:0;
-				/*@editable*/padding-top:9px;
-				/*@editable*/padding-bottom:9px;
+				/*@editable*/padding-top:0px;
+				/*@editable*/padding-bottom:0px;
 			}
 		/*
 		@tab Preheader
@@ -249,7 +249,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 				/*@editable*/background-size:cover;
 				/*@editable*/border-top:0;
 				/*@editable*/border-bottom:0;
-				/*@editable*/padding-top:9px;
+				/*@editable*/padding-top:0px;
 				/*@editable*/padding-bottom:0;
 			}
 		/*
@@ -288,7 +288,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 				/*@editable*/border-top:0;
 				/*@editable*/border-bottom:2px solid #EAEAEA;
 				/*@editable*/padding-top:0;
-				/*@editable*/padding-bottom:9px;
+				/*@editable*/padding-bottom:0px;
 			}
 		/*
 		@tab Body
@@ -325,8 +325,8 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 				/*@editable*/background-size:cover;
 				/*@editable*/border-top:0;
 				/*@editable*/border-bottom:0;
-				/*@editable*/padding-top:9px;
-				/*@editable*/padding-bottom:9px;
+				/*@editable*/padding-top:0px;
+				/*@editable*/padding-bottom:0px;
 			}
 		/*
 		@tab Footer
@@ -394,7 +394,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 	
 	}	@media only screen and (max-width: 480px){
 			.mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{
-				padding-top:9px !important;
+				padding-top:0px !important;
 			}
 	
 	}	@media only screen and (max-width: 480px){
@@ -415,7 +415,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 	
 	}	@media only screen and (max-width: 480px){
 			.mcnImageGroupBlockOuter{
-				padding-top:9px !important;
+				padding-top:0px !important;
 				padding-bottom:9px !important;
 			}
 	
@@ -599,7 +599,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 									<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnBoxedTextContentContainer">
 											<tbody><tr>
 													
-													<td style="padding-top:9px; padding-left:18px; padding-bottom:9px; padding-right:18px;">
+													<td style="padding-top:0px; padding-left:18px; padding-bottom:0px; padding-right:18px;">
 													
 															<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width:100% !important;">
 																	<tbody><tr>
@@ -644,7 +644,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 									<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnBoxedTextContentContainer">
 											<tbody><tr>
 													
-													<td style="padding-top:9px; padding-left:18px; padding-bottom:9px; padding-right:18px;">
+													<td style="padding-top:0px; padding-left:18px; padding-bottom:0px; padding-right:18px;">
 													
 															<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width:100% !important;">
 																	<tbody><tr>
@@ -706,7 +706,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
 			<tbody class="mcnTextBlockOuter">
 					<tr>
-							<td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+							<td valign="top" class="mcnTextBlockInner" style="padding-top:0px;">
 									<!--[if mso]>
 					<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
 					<tr>
@@ -723,7 +723,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 															<font face="arial, helvetica neue, helvetica, sans-serif"><strong>Contamos com sua presença!&nbsp;</strong></font></td></tr></tbody></table></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
 			<tbody class="mcnTextBlockOuter">
 					<tr>
-							<td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+							<td valign="top" class="mcnTextBlockInner" style="padding-top:0px;">
 									<!--[if mso]>
 					<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
 					<tr>
@@ -767,7 +767,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 							<td align="center" style="padding-left:9px;padding-right:9px;">
 									<table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnFollowContent">
 											<tbody><tr>
-													<td align="center" valign="top" style="padding-top:9px; padding-right:9px; padding-left:9px;">
+													<td align="center" valign="top" style="padding-top:0px; padding-right:9px; padding-left:9px;">
 															<table align="center" border="0" cellpadding="0" cellspacing="0">
 																	<tbody><tr>
 																			<td align="center" valign="top">
@@ -783,7 +783,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 																							
 																									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
 																											<tbody><tr>
-																													<td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+																													<td valign="top" style="padding-right:10px; padding-bottom:0px;" class="mcnFollowContentItemContainer">
 																															<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
 																																	<tbody><tr>
 																																			<td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
@@ -815,7 +815,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 																							
 																									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
 																											<tbody><tr>
-																													<td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+																													<td valign="top" style="padding-right:10px; padding-bottom:0px;" class="mcnFollowContentItemContainer">
 																															<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
 																																	<tbody><tr>
 																																			<td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
@@ -847,7 +847,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 																							
 																									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
 																											<tbody><tr>
-																													<td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+																													<td valign="top" style="padding-right:10px; padding-bottom:0px;" class="mcnFollowContentItemContainer">
 																															<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
 																																	<tbody><tr>
 																																			<td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
@@ -879,7 +879,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 																							
 																									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
 																											<tbody><tr>
-																													<td valign="top" style="padding-right:0; padding-bottom:9px;" class="mcnFollowContentItemContainer">
+																													<td valign="top" style="padding-right:0; padding-bottom:0px;" class="mcnFollowContentItemContainer">
 																															<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
 																																	<tbody><tr>
 																																			<td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
@@ -942,7 +942,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 			</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
 					<tbody class="mcnTextBlockOuter">
 							<tr>
-									<td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+									<td valign="top" class="mcnTextBlockInner" style="padding-top:0px;">
 											<!--[if mso]>
 							<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
 							<tr>
@@ -954,7 +954,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 											<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
 													<tbody><tr>
 															
-															<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+															<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:0px; padding-left:18px;">
 															
 																	<span style="font-size:18px"><strong>Dúvidas?&nbsp;</strong></span><br>
 			<br>
