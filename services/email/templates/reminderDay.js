@@ -1,9 +1,10 @@
+/* eslint-disable indent */
 /* eslint-disable no-tabs */
 
+import { MomentSpeed } from '../../../src/util/date';
 import { RenderMap, Verify } from '../util/render';
 
-export default function getTemplateReminderUser({ username }) {
-  const palestras = [...new Array(3)];
+export default function getTemplateReminderUser({ username, schedulers = [] }) {
   return `<!doctype html>
 	<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 			<head>
@@ -625,8 +626,8 @@ export default function getTemplateReminderUser({ username }) {
 			</tbody>
 	</table>
 	${RenderMap(
-    palestras,
-    (palestra, indexPalestra) => `
+    schedulers,
+    (scheduler, indexPalestra) => `
 	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width:100%;">
 			<!--[if gte mso 9]>
 		<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -646,8 +647,14 @@ export default function getTemplateReminderUser({ username }) {
 															<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width:100% !important;">
 																	<tbody><tr>
 																			<td valign="top" class="mcnTextContent" style="padding: 18px;color: #6351AD;font-family: Helvetica;font-size: 18px;font-style: normal;font-weight: normal;line-height: 150%;text-align: left;">
-																					<font face="arial, helvetica neue, helvetica, sans-serif"><strong>13:00 - </strong><strong>Web Design: FIGMA</strong><br>
-	Sala 01</font>
+																					<font face="arial, helvetica neue, helvetica, sans-serif"><strong>${MomentSpeed(
+                                            scheduler.initialDate,
+                                          ).format(
+                                            'HH:mm',
+                                          )} - </strong><strong>${
+      scheduler.title
+    }</strong><br>
+	${scheduler.location}</font>
 																			</td>
 																	</tr>
 															</tbody></table>
@@ -667,7 +674,7 @@ export default function getTemplateReminderUser({ username }) {
 			</tbody>
 	</table>
 	${Verify(
-    indexPalestra !== palestras.length - 1,
+    indexPalestra !== schedulers.length - 1,
     `
 	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
 			<tbody class="mcnDividerBlockOuter">
