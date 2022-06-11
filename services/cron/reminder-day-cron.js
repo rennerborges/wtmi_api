@@ -11,7 +11,7 @@ export async function SendEmailReminderDay() {
   const users = await getUserAndSchedulers(dateNow);
   users.forEach((user) => {
     const templateEmail = getTemplateReminderUser({
-      username: user.name,
+      username: user.name.toLowerCase(),
       schedulers: user.schedulers,
     });
 

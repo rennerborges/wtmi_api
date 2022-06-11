@@ -2,7 +2,7 @@
 /* eslint-disable no-tabs */
 
 import { MomentSpeed } from '../../../src/util/date';
-import { RenderMap, Verify } from '../util/render';
+import { RenderMap } from '../util/render';
 
 export default function getTemplateReminderUser({ username, schedulers = [] }) {
   return `<!doctype html>
@@ -604,11 +604,13 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 															<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width:100% !important;">
 																	<tbody><tr>
 																			<td valign="top" class="mcnTextContent" style="padding: 18px;color: #6351AD;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: normal;line-height: 150%;text-align: left;">
-																					<div style="text-align: left;"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><strong>Caro ${username}!&nbsp;</strong></span><br>
+																					<div style="text-align: left;"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><strong style="text-transform: capitalize;">Caro ${username}!&nbsp;</strong></span><br>
 	&nbsp;</div>
 	Hoje <strong>${MomentSpeed().format('LL')}</strong> você terá <strong>${
     schedulers.length
-  } </strong>palestras agendadas no IF Goiano Campus Morrinhos no prédio do Núcleo da computação!&nbsp;</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
+  } </strong>palestra${
+    schedulers.length !== 1 ? 's' : ''
+  } agendadas no IF Goiano Campus Morrinhos no prédio do Núcleo da computação!&nbsp;</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
 			<tbody class="mcnDividerBlockOuter">
 					<tr>
 							<td class="mcnDividerBlockInner" style="min-width:100%; padding:18px;">
@@ -629,7 +631,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 	</table>
 	${RenderMap(
     schedulers,
-    (scheduler, indexPalestra) => `
+    (scheduler) => `
 	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width:100%;">
 			<!--[if gte mso 9]>
 		<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -675,9 +677,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 					</tr>
 			</tbody>
 	</table>
-	${Verify(
-    indexPalestra !== schedulers.length - 1,
-    `
+
 	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
 			<tbody class="mcnDividerBlockOuter">
 					<tr>
@@ -697,8 +697,7 @@ export default function getTemplateReminderUser({ username, schedulers = [] }) {
 					</tr>
 			</tbody>
 	</table>
-	`,
-  )}
+	
 	
 	`,
   )}
