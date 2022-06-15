@@ -6,12 +6,7 @@ const modelSchema = new mongoose.Schema({
   name: String,
   password: String,
   email: String,
-  cpf: String,
-  tel: String,
-  dateOfBirth: Date,
-  companyId: String,
   role: String,
-  workload: Number,
   enabled: Boolean,
 });
 

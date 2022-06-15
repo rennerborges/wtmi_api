@@ -37,6 +37,11 @@ const doc = {
   produces: ['application/json', 'multipart/form-data'],
   tags: [
     {
+      name: 'Autenticação',
+      description:
+        'Responsável por todo gerenciamento da autenticação no software',
+    },
+    {
       name: 'Informações',
       description:
         'Responsável por todo gerenciamento das informações contidas no software',
@@ -77,6 +82,20 @@ const doc = {
       },
       ConfirmPresence: {
         email: 'rennerferreira23@gmail.com',
+      },
+      PostUser: {
+        name: 'Renner Borges',
+        password: '12345678@Re',
+        email: 'rennerferreira23@gmail.com',
+        role: 'g',
+        enabled: true,
+      },
+      EditUser: {
+        name: 'Renner Ferreira',
+      },
+      Login: {
+        email: 'renner@gmail.com',
+        password: '12345678@Re',
       },
     },
   },

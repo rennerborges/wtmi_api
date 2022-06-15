@@ -15,6 +15,7 @@ router.get(
 
 router.get(
   '/info/scheduler/:codeScheduler',
+  Auth('gc'),
   informationController.getSchedulerByCode,
 );
 
@@ -26,6 +27,7 @@ router.get(
 router.post(
   '/scheduler/:code/confirm/presence',
   ValidationConfirmPresencePost,
+  Auth('gc'),
   informationController.setPresenceScheduler,
 );
 

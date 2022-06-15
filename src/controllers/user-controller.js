@@ -1,29 +1,23 @@
+/* eslint-disable max-len */
 import mongoose from 'mongoose';
 import UserModel from '../models/user';
 import { removeValueUndefinedOrNull } from '../util/object';
 import { hashPassword } from '../util/password';
-import { removeMaskCpf } from '../util/cpf';
-import { removeMaskTel } from '../util/tel';
 
 export const getUser = async (req, res, next) => {
   /* #swagger.tags = ["Usuários"] */
-  /* #swagger.description = "Rota responsável por trazer um usuário específico pelo ID do mesmo" */
-  /* #swagger.parameters['id'] = {
+  /* #swagger.description = "Rota responsável por trazer um usuário específico pelo e-mail do mesmo" */
+  /* #swagger.parameters['email'] = {
       in: "path",
-      description: "ID da empresa",
+      description: "Email do usuário",
       required: true,
       type: "string",
   } */
-  const { id } = req.params;
+  const { email } = req.params;
 
   try {
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-      throw new Error('Informe um id válido');
-    }
-
     const user = await UserModel.findOne({
-      _id: id,
-      companyId: req.user.companyId,
+      email,
     }).select(['-password']);
 
     if (!user || !user.enabled) {
@@ -39,9 +33,7 @@ export const getUser = async (req, res, next) => {
 export const getUsers = async (req, res) => {
   /* #swagger.tags = ["Usuários"] */
   /* #swagger.description = "Rota responsável por trazer todos usuários" */
-  const users = await UserModel.find({
-    companyId: req.user.companyId,
-  }).select(['-password']);
+  const users = await UserModel.find().select(['-password']);
 
   res.json({
     users,
@@ -50,12 +42,12 @@ export const getUsers = async (req, res) => {
 
 export const createUser = async (req, res, next) => {
   /* #swagger.tags = ["Usuários"] */
-  /* #swagger.description = "Rota responsável por criar um usuário vinculado a uma empresa" */
+  /* #swagger.description = "Rota responsável por criar um usuário" */
   /* #swagger.requestBody = { 
     required: true, 
     content: { 
       "application/json": { 
-        schema: { $ref: "#/components/schemas/CreateUser" }, 
+        schema: { $ref: "#/components/schemas/PostUser" }, 
       } 
     } 
     } 
@@ -66,7 +58,7 @@ export const createUser = async (req, res, next) => {
     const passwordHashed = await hashPassword(body.password);
 
     const userAlreadyExists = await UserModel.findOne({
-      $or: [{ email: body.email }, { cpf: body.cpf }],
+      email: body.email,
     });
 
     if (userAlreadyExists) {
@@ -77,16 +69,11 @@ export const createUser = async (req, res, next) => {
       name: body.name,
       password: passwordHashed,
       email: body.email,
-      companyId: body.companyId,
-      cpf: removeMaskCpf(body.cpf),
-      tel: removeMaskTel(body.tel),
-      dateOfBirth: body.dateOfBirth,
       role: body.role,
-      workload: body.workload,
       enabled: true,
     });
 
-    // await user.save();
+    await user.save();
 
     res.status(201).json({ user });
   } catch (error) {
@@ -116,12 +103,10 @@ export const updateUser = async (req, res, next) => {
     const bodyUpdate = removeValueUndefinedOrNull({
       name: body.name,
       password: passwordHashed,
-      tel: removeMaskTel(body.tel),
-      workload: body.workload,
     });
 
     const user = await UserModel.findOneAndUpdate(
-      { _id: body.id, companyId: req.user.companyId },
+      { email: req.user.email },
       bodyUpdate,
     );
 

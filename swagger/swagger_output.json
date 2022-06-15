@@ -22,6 +22,10 @@
   ],
   "tags": [
     {
+      "name": "Autenticação",
+      "description": "Responsável por todo gerenciamento da autenticação no software"
+    },
+    {
       "name": "Informações",
       "description": "Responsável por todo gerenciamento das informações contidas no software"
     },
@@ -52,6 +56,117 @@
           }
         },
         "security": []
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Autenticação"
+        ],
+        "description": "Rota responsável por autenticar um usuário",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "Usuários"
+        ],
+        "description": "Rota responsável por trazer todos usuários",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          }
+        }
+      }
+    },
+    "/user/{email}": {
+      "get": {
+        "tags": [
+          "Usuários"
+        ],
+        "description": "Rota responsável por trazer um usuário específico pelo e-mail do mesmo",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Email do usuário"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          }
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "tags": [
+          "Usuários"
+        ],
+        "description": "Rota responsável por criar um usuário",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostUser"
+              }
+            }
+          }
+        }
       }
     },
     "/invite": {
@@ -389,6 +504,53 @@
           "email": {
             "type": "string",
             "example": "rennerferreira23@gmail.com"
+          }
+        }
+      },
+      "PostUser": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Renner Borges"
+          },
+          "password": {
+            "type": "string",
+            "example": "12345678@Re"
+          },
+          "email": {
+            "type": "string",
+            "example": "rennerferreira23@gmail.com"
+          },
+          "role": {
+            "type": "string",
+            "example": "g"
+          },
+          "enabled": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "EditUser": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Renner Ferreira"
+          }
+        }
+      },
+      "Login": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "renner@gmail.com"
+          },
+          "password": {
+            "type": "string",
+            "example": "12345678@Re"
           }
         }
       }
