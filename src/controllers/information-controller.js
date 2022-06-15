@@ -4,6 +4,7 @@ import schedulersModel from '../models/schedulers';
 import registersModel from '../models/registers';
 import { getUserAndSchedulers } from '../helpers/information-helper';
 import { FormatDate, IsBetween, MomentSpeed, SetZeroDate } from '../util/date';
+import { Clone } from '../util/object';
 
 dotenv.config({ path: './variables.env' });
 
@@ -97,7 +98,23 @@ export const getSchedulerByCode = async (req, res, next) => {
       });
     }
 
-    res.json({ scheduler });
+    const registers = await registersModel.find({
+      codeSchedule: codeScheduler,
+      isPresence: false,
+    });
+
+    const response = Clone(scheduler);
+
+    response.users = registers.map((register) => ({
+      email: register.email,
+      name: String(register.name)
+        .toLowerCase()
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' '),
+    }));
+
+    res.json({ scheduler: response });
   } catch (error) {
     next(error);
   }
@@ -177,7 +194,7 @@ export const setPresenceScheduler = async (req, res, next) => {
 
     const alreadyRegister = await registersModel.findOne({
       email,
-      code,
+      codeSchedule: code,
     });
 
     if (!alreadyRegister) {
@@ -185,7 +202,7 @@ export const setPresenceScheduler = async (req, res, next) => {
     }
 
     if (alreadyRegister.isPresence) {
-      res
+      return res
         .status(409)
         .json({ message: 'Usuário já registrou sua presença nessa palestra!' });
     }
