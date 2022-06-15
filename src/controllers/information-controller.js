@@ -224,7 +224,7 @@ export const setPresenceScheduler = async (req, res, next) => {
     await registersModel.findOneAndUpdate(
       {
         email,
-        code,
+        codeSchedule: code,
       },
       { isPresence: true },
     );
