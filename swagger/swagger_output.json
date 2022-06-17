@@ -259,6 +259,36 @@
         }
       }
     },
+    "/invite/reitor": {
+      "post": {
+        "tags": [
+          "Envio de e-mail"
+        ],
+        "description": "Rota responsável por enviar e-mail de convite ao Reitor",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendEmailDefault"
+              }
+            }
+          }
+        }
+      }
+    },
     "/import/schedule": {
       "post": {
         "tags": [
@@ -407,6 +437,12 @@
           "200": {
             "description": "OK"
           },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          },
           "404": {
             "description": "Não Encontrado"
           }
@@ -462,6 +498,12 @@
         "responses": {
           "201": {
             "description": "Criado"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
           },
           "404": {
             "description": "Não Encontrado"

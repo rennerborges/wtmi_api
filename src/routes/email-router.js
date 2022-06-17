@@ -26,4 +26,11 @@ router.post(
   emailController.postSponsorsInvite,
 );
 
+router.post(
+  '/invite/reitor',
+  ValidatorSendEmailDefault,
+  Auth(),
+  emailController.postInviteReitor,
+);
+
 export default router;

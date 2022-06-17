@@ -86,7 +86,10 @@ export const getSchedulerByCode = async (req, res, next) => {
 
     const dateNow = MomentSpeed();
 
-    const dateInicialScheduler = MomentSpeed(scheduler.initialDate);
+    const dateInicialScheduler = MomentSpeed(scheduler.initialDate).subtract(
+      15,
+      'minute',
+    );
 
     const dateFinalScheduler = MomentSpeed(scheduler.finalDate)
       .add(30, 'minute')
@@ -209,9 +212,9 @@ export const setPresenceScheduler = async (req, res, next) => {
 
     const dateNow = MomentSpeed();
 
-    const dateInicialScheduler = MomentSpeed(
-      scheduler.initialDate,
-    ).toISOString();
+    const dateInicialScheduler = MomentSpeed(scheduler.initialDate)
+      .subtract(15, 'minute')
+      .toISOString();
 
     const dateFinalScheduler = MomentSpeed(scheduler.finalDate)
       .add(30, 'minute')
