@@ -240,10 +240,59 @@ export const setPresenceScheduler = async (req, res, next) => {
   }
 };
 
+export const getParticipantSchedulerByCode = async (req, res, next) => {
+  /* #swagger.description = "Rota responsável por trazer um participante da palestra escolhida" */
+  /* #swagger.tags = ["Informações"] */
+  /* #swagger.parameters['codeScheduler'] = {
+      in: "path",
+      description: "Código da palestra",
+      required: true,
+      type: "string",
+      example: "456139",
+  } */
+
+  try {
+    const { codeScheduler } = req.params;
+
+    const scheduler = await schedulersModel.findOne({
+      code: codeScheduler,
+    });
+
+    if (!scheduler) {
+      return res.status(404).json({ message: 'Programação não encontrada' });
+    }
+
+    const registers = await registersModel.find({
+      codeSchedule: codeScheduler,
+    });
+
+    if (!registers) {
+      return res.status(404).json({ message: 'Não há nenhum participante' });
+    }
+
+    const participants = registers.map((register) => ({
+      email: register.email,
+      name: String(register.name)
+        .toLowerCase()
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' '),
+    }));
+
+    const indexParticipant =
+      Math.floor(Math.random() * (participants.length - 0 + 1)) + 0;
+
+    res.json({ participant: participants[indexParticipant] });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export default {
   getSchedulers,
   getUsersSchedulers,
   getSchedulerByCode,
   getSchedulersByRoom,
   setPresenceScheduler,
+  getParticipantSchedulerByCode,
 };

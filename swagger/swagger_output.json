@@ -523,6 +523,40 @@
           }
         }
       }
+    },
+    "/info/scheduler/{codeScheduler}/random/participant": {
+      "get": {
+        "tags": [
+          "Informações"
+        ],
+        "description": "Rota responsável por trazer um participante da palestra escolhida",
+        "parameters": [
+          {
+            "name": "codeScheduler",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Código da palestra",
+            "example": "456139"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          }
+        }
+      }
     }
   },
   "components": {

@@ -31,4 +31,10 @@ router.post(
   informationController.setPresenceScheduler,
 );
 
+router.get(
+  '/info/scheduler/:codeScheduler/random/participant',
+  Auth('gc'),
+  informationController.getParticipantSchedulerByCode,
+);
+
 export default router;
